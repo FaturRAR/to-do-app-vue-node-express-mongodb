@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const whitelist = ['https://todoapprarr.web.app', 'https://null.jsbin.com']
+const whitelist = ['https://todoapprarr.web.app', 'https://null.jsbin.com', 'https://front-end-vue-3a743.web.app']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
