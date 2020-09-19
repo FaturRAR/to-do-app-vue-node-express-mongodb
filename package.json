@@ -1,5 +1,5 @@
 {
-  "name": "TO_DO_APP_VUE_NODE_EXPRESS_MONGODB",
+  "name": "todoapp",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",

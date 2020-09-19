@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const whitelist = ['https://todoapprarr.web.app']
+const whitelist = ['https://todoapprarr.web.app', 'https://null.jsbin.com']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -21,7 +21,10 @@ const corsOptions = {
     }
   }
 }
-
+// const corsOptions = {
+//     origin: 'https://null.jsbin.com', //'https://todoapprarr.web.app' || ,
+//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
 
 app.use(cors(corsOptions))
 
