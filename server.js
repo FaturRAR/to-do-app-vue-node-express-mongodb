@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const whitelist = ['https://todoapprarr.web.app/' ,'http://localhost:8081']
+const whitelist = ['https://cors-anywhere.herokuapp.com/https://todoapprarr.web.app/' ,'http://localhost:8081']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
