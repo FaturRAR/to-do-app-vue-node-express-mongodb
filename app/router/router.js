@@ -6,6 +6,10 @@ module.exports = app => {
 
     router.get('/', todo.findAll)
 
+    router.get('/test', (req, res) => {
+        res.send('siap bang jago')
+    })
+
     router.get('/done', todo.findByDone)
 
     router.get('/notdone', todo.findByNotDone)
