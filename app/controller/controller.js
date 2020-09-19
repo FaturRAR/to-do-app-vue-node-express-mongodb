@@ -3,7 +3,7 @@ const db = require('../model/list.model');
 exports.create = (req, res) => {
     const {todo, done} = req.body;
     db.create({ todo, done })
-        .then(data => {
+        .then(data => { 
             res.json(data)
         })
         .catch(err => {

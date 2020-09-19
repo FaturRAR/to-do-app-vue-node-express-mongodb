@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const whitelist = ['http://localhost:8081', 'https://todoapprarr.web.app/']
+const whitelist = ['https://todoapprarr.web.app/' ,'http://localhost:8081']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -32,7 +32,7 @@ const router = require('./app/router/router')
 router(app)
 
 app.get('/', (req,res) => {
-    res.send('Hello from server!')
+    res.send('Hello bruh from server!')
 })
 
 app.listen(port, () => {
