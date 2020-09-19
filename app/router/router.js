@@ -22,5 +22,5 @@ module.exports = app => {
 
     router.delete('/', todo.deleteAll)
 
-    app.use('/api/', router)
+    app.use('/api', router)
 }
