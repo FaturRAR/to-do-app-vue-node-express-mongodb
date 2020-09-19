@@ -1,26 +1,23 @@
 module.exports = app => {
-    const todo = require('../controller/controller'),
-    router = require('express').Router();
+    const todo = require('../controller/controller');
 
-    router.post('/', todo.create)
+    app.post('/api/', todo.create)
 
-    router.get('/', todo.findAll)
+    app.get('/api/', todo.findAll)
 
-    router.get('/test', (req, res) => {
+    app.get('/api/test', (req, res) => {
         res.send('siap bang jago')
     })
 
-    router.get('/done', todo.findByDone)
+    app.get('/api/done', todo.findByDone)
 
-    router.get('/notdone', todo.findByNotDone)
+    app.get('/api/notdone', todo.findByNotDone)
 
-    router.get('/one/:id', todo.findOne)
+    app.get('/api/one/:id', todo.findOne)
 
-    router.put('/:id', todo.update)
+    app.put('/api/:id', todo.update)
 
-    router.delete('/:id', todo.delete)
+    app.delete('/api/:id', todo.delete)
 
-    router.delete('/', todo.deleteAll)
-
-    app.use('/api', router)
+    app.delete('/api', todo.deleteAll)
 }
