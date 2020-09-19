@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const whitelist = ['https://cors-anywhere.herokuapp.com/https://todoapprarr.web.app/' ,'http://localhost:8081']
+const whitelist = ['https://todoapprarr.web.app']
 const corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
@@ -23,6 +23,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
+// app.use(cors())
 
 // Connect to db
 const connect = require('./app/db/connect')
