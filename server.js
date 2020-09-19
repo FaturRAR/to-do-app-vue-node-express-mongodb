@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 const whitelist = ['https://todoapprarr.web.app/' ,'http://localhost:8081']
 const corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
