@@ -21,10 +21,6 @@ const corsOptions = {
     }
   }
 }
-// const corsOptions = {
-//     origin: 'https://null.jsbin.com', //'https://todoapprarr.web.app' || ,
-//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// }
 
 app.use(cors(corsOptions))
 
@@ -33,7 +29,10 @@ const connect = require('./app/db/connect')
 connect()
 
 const router = require('./app/router/router')
-router(app)
+app.use('/api', router)
+
+const todo = require('./app/controller/controller');
+app.get('/api', todo.findAll)
 
 app.get('/', (req,res) => {
     res.send('Hello bruh from server!')
