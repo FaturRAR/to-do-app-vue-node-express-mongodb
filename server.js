@@ -37,7 +37,7 @@ const connect = require('./app/db/connect')
 connect()
 
 const router = require('./app/router/router')
-app.use('/api', router)
+app.use('/api/', router)
 const db = require('./app/model/list.model');
 // const todo = require('./app/controller/controller');
 app.get('/api',  (req, res) => {
