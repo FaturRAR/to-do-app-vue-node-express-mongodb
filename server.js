@@ -22,7 +22,14 @@ app.use(bodyParser.json())
 //   }
 // }
 
-app.use(cors())
+const config = {
+  "origin": "https://front-end-vue-3a743.web.app/",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
+
+app.use(cors(config))
 // app.use(cors(corsOptions))
 
 // Connect to db
