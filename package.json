@@ -12,9 +12,6 @@
   "devDependencies": {},
   "scripts": {
     "server": "nodemon server.js",
-    "build": "cd client && npm run build",
-    "instal-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "keywords": [],
   "author": "",
