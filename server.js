@@ -26,7 +26,7 @@ const config = {
   "origin": "http://localhost:8081",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "preflightContinue": false,
-  "optionsSuccessStatus": 204
+  "optionsSuccessStatus": 200
 }
 
 app.use(cors(config))
