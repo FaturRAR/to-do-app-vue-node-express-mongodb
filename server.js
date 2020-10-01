@@ -11,18 +11,25 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const whitelist = ['https://vuetodorar.web.app/', 'https://null.jsbin.com', 'http://127.0.0.1:5500']
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
+// const whitelist = ['https://todoapprarr.web.app', 'https://null.jsbin.com', 'https://front-end-vue-3a743.web.app', 'http://127.0.0.1:5500']
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
+
+const config = {
+  "origin": "http://localhost:8081",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
 }
 
-app.use(cors(corsOptions))
+app.use(cors(config))
 // app.use(cors(corsOptions))
 
 // Connect to db
