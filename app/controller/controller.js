@@ -11,8 +11,6 @@ exports.create = (req, res) => {
         })
 }
 
-// exports.findAll =
-
 exports.findByDone = (req, res) => {
     db.find({done: true})
         .then(data => {

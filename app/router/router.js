@@ -3,11 +3,7 @@ router = require('express').Router();
 
     router.post('/', todo.create)
 
-    // router.get('/', todo.findAll)
-
-    router.get('/test', (req, res) => {
-        res.send('siap bang jago')
-    })
+    router.get('/', todo.findAll)
 
     router.get('/done', todo.findByDone)
 
