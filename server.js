@@ -28,6 +28,18 @@ connect()
 const router = require('./app/router/router')
 app.use('/api/', router)
 
+const db = require('./app/model/list.model');
+// const todo = require('./app/controller/controller');
+app.get('/api',  (req, res) => {
+  db.find()
+      .then(data => {
+          res.json(data)
+      })
+      .catch(err => {
+          res.status(500).send(err)
+      })
+})
+
 app.get('/', (req,res) => {
     res.send('Hello bruh from server!')
 })
