@@ -11,6 +11,16 @@ exports.create = (req, res) => {
         })
 }
 
+exports.findAll = (req, res) => {
+    db.find()
+        .then(data => {
+            res.json(data)
+        })
+        .catch(err => {
+            res.status(500).send(err)
+        })
+}
+
 exports.findByDone = (req, res) => {
     db.find({done: true})
         .then(data => {
